@@ -1,0 +1,1307 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>韩剧在线-热播韩剧在线观看_最新韩剧排行榜_韩剧tv推荐</title>
+  <meta name="description" content="韩剧在线观看专题站，聚合热播韩剧、最新韩剧排行榜、经典韩剧推荐与追剧指南。提供韩剧在线观看入口、剧情看点、演员资讯与用户讨论，帮助韩剧迷快速找到想看的韩剧在线资源，收藏本页即可随时追更。">
+  <meta name="keywords" content="韩剧在线,韩剧在线观看,热播韩剧,最新韩剧,韩剧排行榜,韩剧tv">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23f5a0c0'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23ffffff' font-family='Arial'%3E한%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg-body: #fdf8fc;
+      --bg-card: #ffffff;
+      --bg-soft: #fef2f7;
+      --text-main: #2f1e2e;
+      --text-soft: #6b4d62;
+      --text-light: #9b7d8f;
+      --accent: #d94f8a;
+      --accent-light: #fbe4ee;
+      --accent-soft: #f7c8dd;
+      --pink-soft: #fde8f1;
+      --border: #f0dae7;
+      --shadow: 0 8px 24px rgba(210, 130, 170, 0.12);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --max-width: 1200px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg-body);
+      font-family: var(--font);
+      color: var(--text-main);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    .wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 顶部导航 */
+    .header {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 1.55rem;
+      letter-spacing: -0.5px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .logo-mark {
+      display: inline-block;
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(145deg, #f7b8d4, #d94f8a);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 900;
+      box-shadow: 0 4px 12px rgba(217, 79, 138, 0.35);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      padding: 8px 12px;
+      border-radius: 30px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+
+    .nav-search {
+      display: flex;
+      align-items: center;
+      background: var(--bg-soft);
+      border-radius: 40px;
+      padding: 4px 4px 4px 18px;
+      border: 1px solid var(--border);
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .nav-search input {
+      border: none;
+      background: transparent;
+      font-size: 0.9rem;
+      padding: 8px 0;
+      width: 130px;
+      outline: none;
+      color: var(--text-main);
+    }
+
+    .nav-search input::placeholder {
+      color: var(--text-light);
+      font-size: 0.85rem;
+    }
+
+    .nav-search button {
+      background: var(--accent);
+      border: none;
+      color: #fff;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .nav-search button:hover {
+      background: #b83e73;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--text-main);
+      cursor: pointer;
+    }
+
+    /* Banner */
+    .hero {
+      background: linear-gradient(135deg, #fcecf4 0%, #f9dae9 40%, #fcecf4 100%);
+      padding: 48px 0 56px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(255, 210, 230, 0.5) 0%, transparent 70%);
+      top: -80px;
+      right: -60px;
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      color: #3d1e2c;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+      background: linear-gradient(145deg, #d94f8a, #b83e73);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--text-soft);
+      max-width: 640px;
+      margin-bottom: 8px;
+      line-height: 1.7;
+    }
+
+    .hero-search {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 60px;
+      padding: 6px 6px 6px 24px;
+      box-shadow: 0 12px 32px rgba(217, 79, 138, 0.15);
+      width: 100%;
+      max-width: 520px;
+      margin: 24px auto 28px;
+      border: 1px solid #f7d6e6;
+    }
+
+    .hero-search input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      padding: 12px 0;
+      color: var(--text-main);
+      background: transparent;
+    }
+
+    .hero-search input::placeholder {
+      color: var(--text-light);
+      font-size: 0.92rem;
+    }
+
+    .hero-search button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .hero-search button:hover {
+      background: #b83e73;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .hero-tags a {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 0.88rem;
+      color: var(--text-soft);
+      border: 1px solid #f5d0e0;
+      backdrop-filter: blur(4px);
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+
+    .hero-tags a:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* section通用 */
+    .section {
+      padding: 48px 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #3d1e2c;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::before {
+      content: '';
+      width: 6px;
+      height: 28px;
+      background: linear-gradient(to bottom, #f0a0c0, #d94f8a);
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .section-sub {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    .section-more {
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .section-more:hover {
+      text-decoration: underline;
+    }
+
+    /* 排名卡片列表 */
+    .rank-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .rank-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: transform 0.2s, box-shadow 0.25s;
+    }
+
+    .rank-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px rgba(217, 79, 138, 0.12);
+      border-color: #f5c0d8;
+    }
+
+    .rank-num {
+      font-size: 1.9rem;
+      font-weight: 900;
+      line-height: 1;
+      min-width: 44px;
+      text-align: center;
+      color: #e0b0c8;
+      letter-spacing: -0.04em;
+    }
+
+    .rank-num.top {
+      color: var(--accent);
+    }
+
+    .rank-info {
+      flex: 1;
+    }
+
+    .rank-info h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #3d1e2c;
+    }
+
+    .rank-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 6px 0 8px;
+      font-size: 0.8rem;
+    }
+
+    .rank-meta span {
+      background: var(--bg-soft);
+      padding: 2px 10px;
+      border-radius: 20px;
+      color: var(--text-soft);
+      font-weight: 500;
+    }
+
+    .rank-desc {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .category-item {
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      padding: 18px 12px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+      font-weight: 600;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    .category-item:hover {
+      background: var(--accent-light);
+      color: var(--accent);
+      transform: translateY(-2px);
+      border-color: #f0b8d0;
+    }
+
+    /* 最新更新列表 */
+    .update-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .update-item {
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      box-shadow: 0 2px 12px rgba(210, 130, 170, 0.06);
+      border: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+
+    .update-item:hover {
+      background: var(--bg-soft);
+    }
+
+    .update-time {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      white-space: nowrap;
+      min-width: 70px;
+      padding-top: 2px;
+      font-weight: 500;
+    }
+
+    .update-title {
+      font-weight: 700;
+      color: #3d1e2c;
+      margin-bottom: 2px;
+    }
+
+    .update-desc {
+      font-size: 0.88rem;
+      color: var(--text-soft);
+    }
+
+    /* 深度解析正文 */
+    .article-block {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .article-block h2 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+      color: #3d1e2c;
+    }
+
+    .article-block h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 26px 0 12px;
+      color: #5c2e48;
+    }
+
+    .article-block p {
+      margin-bottom: 16px;
+      color: #3f2a3a;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .article-block strong {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* 体验指南 */
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .guide-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      padding: 24px 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .guide-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .guide-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: #3d1e2c;
+    }
+
+    .guide-card p {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    /* FAQ 手风琴 */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(210, 130, 170, 0.04);
+    }
+
+    .faq-q {
+      padding: 18px 24px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #3d1e2c;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+
+    .faq-q:hover {
+      background: var(--bg-soft);
+    }
+
+    .faq-q::after {
+      content: '＋';
+      font-size: 1.2rem;
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    .faq-a {
+      padding: 0 24px 20px;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      border-top: 1px dashed var(--border);
+      padding-top: 16px;
+      margin-top: 0;
+    }
+
+    /* 用户评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .comment-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      box-shadow: 0 2px 10px rgba(210, 130, 170, 0.05);
+      border: 1px solid var(--border);
+    }
+
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #f7c8dd, #e8a0c0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .nickname {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #3d1e2c;
+    }
+
+    .comment-date {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-left: auto;
+    }
+
+    .comment-text {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    /* 资讯卡片 */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .news-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: transform 0.2s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .news-date {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+
+    .news-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #3d1e2c;
+      line-height: 1.4;
+    }
+
+    .news-card p {
+      font-size: 0.86rem;
+      color: var(--text-soft);
+      line-height: 1.55;
+    }
+
+    /* 页脚 */
+    .footer {
+      background: #2f1e2e;
+      color: #c9b0be;
+      padding: 40px 0 28px;
+      margin-top: 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 36px;
+      margin-bottom: 32px;
+    }
+
+    .footer-brand .logo {
+      color: #f0c0d8;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: #a88098;
+      max-width: 300px;
+    }
+
+    .footer-col h4 {
+      color: #f0c0d8;
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 0.86rem;
+      color: #a88098;
+      margin-bottom: 8px;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #f0c0d8;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #4a2e40;
+      padding-top: 24px;
+      font-size: 0.8rem;
+      color: #7a5a6e;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .disclaimer {
+      font-size: 0.78rem;
+      color: #7a5a6e;
+      line-height: 1.6;
+      margin-top: 8px;
+    }
+
+    /* 响应式 */
+    @media (max-width: 992px) {
+      .rank-grid {
+        grid-template-columns: 1fr;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .guide-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .comment-grid {
+        grid-template-columns: 1fr;
+      }
+      .news-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .nav-search {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero {
+        padding: 32px 0 40px;
+      }
+      .section {
+        padding: 32px 0;
+      }
+      .article-block {
+        padding: 24px 20px;
+      }
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .hero-search {
+        flex-direction: column;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        gap: 12px;
+        border: none;
+      }
+      .hero-search input {
+        background: #fff;
+        border-radius: 60px;
+        padding: 14px 20px;
+        width: 100%;
+        border: 1px solid #f7d6e6;
+      }
+      .hero-search button {
+        width: 100%;
+        padding: 14px;
+        border-radius: 60px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .category-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .rank-card {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .rank-num {
+        text-align: left;
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<header class="header">
+  <div class="wrap nav-bar">
+    <a href="/" class="logo">
+      <span class="logo-mark">한</span>
+      <span>韩剧在线</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="/#rank-hot">热播榜</a>
+      <a href="/#rank-new">新剧榜</a>
+      <a href="/#category">分类</a>
+      <a href="/#update">更新</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#comment">评论</a>
+      <a href="/#news">资讯</a>
+    </nav>
+    <div class="nav-search">
+      <input type="search" placeholder="搜韩剧、演员、导演…" aria-label="站内搜索">
+      <button type="button" aria-label="搜索">🔍</button>
+    </div>
+    <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<main>
+  <!-- 首屏 Banner -->
+  <section class="hero" id="hero">
+    <div class="wrap hero-content">
+      <h1>韩剧在线 · 热播<span>韩剧在线观看</span>榜单</h1>
+      <p>2026 韩剧在线追更指南：聚合最新热播韩剧、经典口碑剧、新剧上线动态。从浪漫爱情到悬疑犯罪，从古装到现代职场，一站式发现值得看的韩剧在线资源。</p>
+      <p>每日整理韩剧在线更新与用户讨论，收藏本页，随时跟进最新韩剧在线排行与播放动态。</p>
+      <form class="hero-search" onsubmit="return false;">
+        <input type="search" placeholder="输入剧名、演员或关键词，例如：泪之女王、韩剧在线…" aria-label="搜索韩剧">
+        <button type="submit">搜索韩剧</button>
+      </form>
+      <div class="hero-tags">
+        <a href="/#rank-hot">热播榜</a>
+        <a href="/#rank-new">新剧榜</a>
+        <a href="/#category">爱情/悬疑/古装</a>
+        <a href="/#update">今日更新</a>
+        <a href="/#deep">编辑解析</a>
+        <a href="/#faq">追剧答疑</a>
+        <a href="/#comment">用户短评</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门榜单 -->
+  <section class="section" id="rank-hot">
+    <div class="wrap">
+      <div class="section-header">
+        <h2 class="section-title">热播韩剧在线榜</h2>
+        <a href="/#rank-hot" class="section-more">更多热播 →</a>
+      </div>
+      <div class="rank-grid">
+        <div class="rank-card">
+          <div class="rank-num top">01</div>
+          <div class="rank-info">
+            <h3>泪之女王</h3>
+            <div class="rank-meta"><span>爱情</span><span>财阀</span><span>虐恋</span></div>
+            <p class="rank-desc">洪海仁与白贤佑的婚姻危机背后藏着家族秘密，金秀贤金智媛演技在线，韩剧在线讨论度持续霸榜。</p>
+          </div>
+        </div>
+        <div class="rank-card">
+          <div class="rank-num top">02</div>
+          <div class="rank-info">
+            <h3>黑暗荣耀</h3>
+            <div class="rank-meta"><span>复仇</span><span>悬疑</span><span>校园</span></div>
+            <p class="rank-desc">文东恩用一生布局复仇，宋慧乔转型之作，韩剧在线复仇题材标杆，细节伏笔值得二刷。</p>
+          </div>
+        </div>
+        <div class="rank-card">
+          <div class="rank-num">03</div>
+          <div class="rank-info">
+            <h3>请回答1988</h3>
+            <div class="rank-meta"><span>怀旧</span><span>家庭</span><span>青春</span></div>
+            <p class="rank-desc">双门洞五家人的温情日常，韩剧在线高分治愈神剧，适合全家一起看的下饭剧。</p>
+          </div>
+        </div>
+        <div class="rank-card">
+          <div class="rank-num">04</div>
+          <div class="rank-info">
+            <h3>信号</h3>
+            <div class="rank-meta"><span>悬疑</span><span>穿越</span><span>刑侦</span></div>
+            <p class="rank-desc">对讲机连接过去与现在，改编真实案件，韩剧在线悬疑剧必看经典，节奏紧凑无尿点。</p>
+          </div>
+        </div>
+        <div class="rank-card">
+          <div class="rank-num">05</div>
+          <div class="rank-info">
+            <h3>非常律师禹英禑</h3>
+            <div class="rank-meta"><span>职场</span><span>治愈</span><span>法律</span></div>
+            <p class="rank-desc">自闭症天才律师的成长故事，朴恩斌细腻演技，韩剧在线温暖治愈系代表，豆瓣9.3分。</p>
+          </div>
+        </div>
+        <div class="rank-card">
+          <div class="rank-num">06</div>
+          <div class="rank-info">
+            <h3>孤单又灿烂的神：鬼怪</h3>
+            <div class="rank-meta"><span>奇幻</span><span>爱情</span><span>经典</span></div>
+            <p class="rank-desc">孔刘金高银奇幻爱情，画面与配乐封神，韩剧在线ost循环播放，初雪必重温。</p>
+          </div>
+        </div>
+        <div class="rank-card">
+          <div class="rank-num">07</div>
+          <div class="rank-info">
+            <h3>二十五，二十一</h3>
+            <div class="rank-meta"><span>青春</span><span>运动</span><span>治愈</span></div>
+            <p class="rank-desc">IMF时代击剑少女与青年记者的成长罗曼史，韩剧在线青春剧天花板，结局引发全网讨论。</p>
+          </div>
+        </div>
+        <div class="rank-card">
+          <div class="rank-num">08</div>
+          <div class="rank-info">
+            <h3>模范出租车</h3>
+            <div class="rank-meta"><span>犯罪</span><span>爽剧</span><span>复仇</span></div>
+            <p class="rank-desc">彩虹运输替受害者复仇，单元剧节奏爽快，韩剧在线犯罪题材高收视系列，已续订第三季。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分类入口 -->
+  <section class="section" id="category">
+    <div class="wrap">
+      <div class="section-header">
+        <h2 class="section-title">韩剧分类索引</h2>
+        <span class="section-sub">按题材快速筛选</span>
+      </div>
+      <div class="category-grid">
+        <a href="/#rank-hot" class="category-item">💕 浪漫爱情</a>
+        <a href="/#rank-hot" class="category-item">🔍 悬疑推理</a>
+        <a href="/#rank-hot" class="category-item">🏯 古装史剧</a>
+        <a href="/#rank-hot" class="category-item">😂 喜剧解压</a>
+        <a href="/#rank-hot" class="category-item">⚖️ 职场法律</a>
+        <a href="/#rank-hot" class="category-item">👻 奇幻灵异</a>
+        <a href="/#rank-hot" class="category-item">🏫 校园青春</a>
+        <a href="/#rank-hot" class="category-item">🔪 犯罪复仇</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最新更新 -->
+  <section class="section" id="update">
+    <div class="wrap">
+      <div class="section-header">
+        <h2 class="section-title">韩剧在线更新动态</h2>
+        <span class="section-sub">2026年11月7日 · 追踪最新剧集</span>
+      </div>
+      <div class="update-list">
+        <div class="update-item">
+          <span class="update-time">今天 21:00</span>
+          <div><div class="update-title">《泪之女王》特别篇上线</div><div class="update-desc">金秀贤金智媛幕后花絮+未公开片段，韩剧在线平台同步更新。</div></div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">今天 14:20</span>
+          <div><div class="update-title">《黑暗荣耀》导演版新增片段</div><div class="update-desc">安吉镐导演重新剪辑版上线，补充文东恩复仇细节，韩剧在线可看。</div></div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">今天 10:05</span>
+          <div><div class="update-title">新剧《您辛苦了》发布首版预告</div><div class="update-desc">IU与朴宝剑合作，济州岛四季故事，预计12月韩剧在线首播。</div></div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">昨天 22:40</span>
+          <div><div class="update-title">《信号》第二季制作确认</div><div class="update-desc">tvN官宣原班人马回归，韩剧在线悬疑迷期待值拉满。</div></div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">昨天 18:15</span>
+          <div><div class="update-title">《请回答1988》十周年特辑</div><div class="update-desc">双门洞家族重聚，韩剧在线平台上线纪念短片，回顾幕后故事。</div></div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">昨天 09:30</span>
+          <div><div class="update-title">《模范出租车3》首发剧照</div><div class="update-desc">李帝勋金义城回归，彩虹运输新任务，预计2027年韩剧在线播出。</div></div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11月5日</span>
+          <div><div class="update-title">《非常律师禹英禑》番外篇上线</div><div class="update-desc">朴恩斌客串新剧，韩剧在线法律题材继续拓展，粉丝别错过。</div></div>
+        </div>
+        <div class="update-item">
+          <span class="update-time">11月4日</span>
+          <div><div class="update-title">《孤单又灿烂的神：鬼怪》4K修复版</div><div class="update-desc">经典画面重制，韩剧在线画质提升，适合重温初雪名场面。</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 深度解析 -->
+  <section class="section" id="deep">
+    <div class="wrap">
+      <div class="article-block">
+        <h2>韩剧在线深度解析：为什么这些剧值得追</h2>
+        <p>韩剧在线观看早已成为国内观众重要的娱乐方式之一。从早期《蓝色生死恋》《冬季恋歌》的悲情虐恋，到《信号》《秘密森林》的硬核悬疑，再到《请回答1988》《机智医生生活》的温暖治愈，韩剧在线内容生态不断丰富。观众搜索“韩剧在线”时，往往不只是想找一部剧，而是希望快速了解当前哪些剧值得看、哪些平台能看、以及每部剧的看点与适合人群。</p>
+        <h3>类型与题材特点</h3>
+        <p>韩剧在类型融合上非常成熟。爱情剧擅长营造氛围感与宿命感，如《鬼怪》将奇幻与浪漫结合，画面和ost成为经典。悬疑剧则注重逻辑与社会批判，《信号》通过真实案件改编，展现跨时空追凶的紧张感。复仇题材如《黑暗荣耀》以细腻的心理刻画和层层递进的计划，让观众获得强烈代入感。古装剧如《王国》将丧尸与宫廷权谋嫁接，拓宽了韩剧在线的类型边界。</p>
+        <h3>内容吸引点与人物分析</h3>
+        <p>韩剧在线受欢迎的核心在于人物塑造。编剧善于给角色设置鲜明弧光，例如《泪之女王》中洪海仁从冷漠财阀到逐渐敞开心扉的转变，白贤佑在婚姻困境中的挣扎，都让观众产生共情。演员的表演也是关键，金秀贤的细腻哭戏、宋慧乔在《黑暗荣耀》中的冷峻复仇形象，都成为社交媒体讨论焦点。韩剧在线用户往往因为一个名场面或一句台词入坑，再通过口碑扩散。</p>
+        <h3>节奏与观看体验</h3>
+        <p>传统韩剧多为16集或20集，每集60-70分钟，适合周播追更。近年来Netflix等平台制作的韩剧节奏更紧凑，如《鱿鱼游戏》9集一气呵成。观众在韩剧在线平台可以根据自身时间选择“追更”或“攒完再看”。对于喜欢深度体验的观众，建议先看前两集判断节奏是否对味；对于偏爱爽剧的用户，《模范出租车》这类单元复仇剧会更友好。</p>
+        <h3>适合人群与同类比较</h3>
+        <p>韩剧在线内容覆盖全年龄段。喜欢浪漫轻松的可以选择《社内相亲》《举重妖精金福珠》；偏爱烧脑推理的可以看《信号》《怪物》；家庭观众适合《请回答1988》《我的出走日记》。与美剧相比，韩剧更注重情感铺垫和细节刻画；与日剧相比，韩剧在制作规模和视觉呈现上更具冲击力。搜索韩剧在线的用户通常希望获得清晰的分类推荐和真实口碑，本页榜单与解析正是为此设计。</p>
+        <h3>用户搜索意图解读</h3>
+        <p>当用户敲下“韩剧在线”时，背后可能包含多种需求：寻找当前热播剧、查询某部剧在哪个平台能看、了解经典剧集排名、或者寻找类似《请回答1988》的治愈剧。本页从热播榜、新剧榜、分类索引、深度解析到FAQ，试图一次性覆盖这些意图。同时，评论区提供了真实用户的追剧反馈，帮助新观众快速判断是否适合自己。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 体验指南 -->
+  <section class="section" id="guide">
+    <div class="wrap">
+      <div class="section-header">
+        <h2 class="section-title">韩剧在线浏览指南</h2>
+        <span class="section-sub">如何高效使用本页面</span>
+      </div>
+      <div class="guide-grid">
+        <div class="guide-card">
+          <div class="guide-icon">📋</div>
+          <h3>榜单快速定位</h3>
+          <p>首页热播榜和新剧榜按热度与更新时间排序，点击卡片可查看剧集看点标签，方便快速筛选。</p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-icon">🏷️</div>
+          <h3>分类精确筛选</h3>
+          <p>分类索引将韩剧在线资源按爱情、悬疑、古装等题材划分，适合有明确偏好的用户。</p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-icon">📱</div>
+          <h3>移动端友好</h3>
+          <p>页面自适应手机屏幕，通勤路上也能轻松浏览韩剧在线榜单和更新动态，收藏更方便。</p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-icon">🔄</div>
+          <h3>更新与追更</h3>
+          <p>更新动态栏目汇总近期上线、预告和制作消息，适合追更用户掌握第一手信息。</p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-icon">💬</div>
+          <h3>评论区参考</h3>
+          <p>真实用户短评提供不同视角，有推荐也有吐槽，帮助判断剧集是否合自己口味。</p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-icon">📚</div>
+          <h3>深度解析扩展</h3>
+          <p>深度解析模块从类型、人物、节奏等维度拆解，适合想深入了解韩剧在线内容的用户。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-header">
+        <h2 class="section-title">韩剧在线常见问题</h2>
+        <span class="section-sub">追剧前你可能想了解</span>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">韩剧在线看一般去哪里找资源？</div>
+          <div class="faq-a">目前韩剧在线观看主要通过正规流媒体平台，如Netflix、Disney+、爱奇艺国际站、韩剧TV等。不同剧集版权分布不同，建议先在本页查看剧集信息，再根据所在地区选择有版权的平台。本页不提供直接播放链接，仅作内容推荐与讨论参考。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">2026年有哪些新韩剧值得关注？</div>
+          <div class="faq-a">根据近期动态，IU与朴宝剑合作的《您辛苦了》预计12月上线，金秀贤新剧也在筹备中。此外《信号》第二季已确认制作，《模范出租车3》预计2027年播出。建议关注本页“更新动态”栏目，我们会持续整理韩剧在线新剧消息。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">韩剧在线榜单的排名依据是什么？</div>
+          <div class="faq-a">本页榜单综合了用户搜索热度、社交平台讨论量、评分网站口碑以及编辑推荐。热播榜侧重近期讨论度，新剧榜侧重上线时间与期待值。排名仅作参考，不代表唯一标准，建议结合自身题材偏好选择。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">适合新手入门的韩剧有哪些？</div>
+          <div class="faq-a">如果第一次看韩剧，推荐从《请回答1988》开始，温暖治愈且门槛低；喜欢爱情喜剧可以看《社内相亲》；想体验悬疑可以从《信号》入手。这些剧在韩剧在线平台口碑稳定，类型明确，适合建立对韩剧的整体印象。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">韩剧一般多久更新一集？</div>
+          <div class="faq-a">韩国本土播出通常每周更新两集（如周五周六或周一周二），每集约60-70分钟。Netflix原创韩剧则多为一次性放出全季。本页更新动态会标注最新上线时间，方便追更用户安排观看节奏。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">类似《黑暗荣耀》的复仇韩剧还有哪些？</div>
+          <div class="faq-a">可以关注《模范出租车》系列（以暴制暴单元复仇）、《文森佐》（黑手党律师复仇）、《财阀家的小儿子》（重生复仇）、《猪猡之王》（校园暴力复仇）。这些剧在韩剧在线平台均有较高讨论度，风格各有侧重，可根据偏好选择。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户评论 -->
+  <section class="section" id="comment">
+    <div class="wrap">
+      <div class="section-header">
+        <h2 class="section-title">韩剧在线用户短评</h2>
+        <span class="section-sub">近30天社区讨论精选</span>
+      </div>
+      <div class="comment-grid">
+        <div class="comment-card">
+          <div class="comment-head"><div class="avatar">追</div><span class="nickname">追剧小能手</span><span class="comment-date">11月6日</span></div>
+          <p class="comment-text">《泪之女王》后劲太大了，金秀贤哭戏真的绝，韩剧在线看完又去二刷了细节。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><div class="avatar">悬</div><span class="nickname">悬疑控阿杰</span><span class="comment-date">11月5日</span></div>
+          <p class="comment-text">《信号》是我心中韩剧在线悬疑天花板，对讲机设定太妙了，第二季快点来！</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><div class="avatar">双</div><span class="nickname">双门洞居民</span><span class="comment-date">11月4日</span></div>
+          <p class="comment-text">每年冬天都要重温《请回答1988》，韩剧在线看一遍哭一遍，狗焕意难平。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><div class="avatar">禹</div><span class="nickname">鲸鱼律师粉</span><span class="comment-date">11月3日</span></div>
+          <p class="comment-text">朴恩斌演禹英禑太灵了，韩剧在线法律题材也能这么治愈，适合下饭。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><div class="avatar">吐</div><span class="nickname">吐槽星人</span><span class="comment-date">11月2日</span></div>
+          <p class="comment-text">最近几部新韩剧在线剧情有点拖，看到第四集就弃了，还是老剧香。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><div class="avatar">鬼</div><span class="nickname">鬼怪新娘</span><span class="comment-date">11月1日</span></div>
+          <p class="comment-text">《鬼怪》4K修复版在韩剧在线上了，画面更清晰，初雪ost一响就起鸡皮疙瘩。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><div class="avatar">模</div><span class="nickname">彩虹运输队</span><span class="comment-date">10月30日</span></div>
+          <p class="comment-text">《模范出租车》爽就完事了，韩剧在线看复仇单元剧不用动脑，解压首选。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><div class="avatar">青</div><span class="nickname">二十五岁</span><span class="comment-date">10月29日</span></div>
+          <p class="comment-text">《二十五，二十一》结局虽然意难平，但韩剧在线看完觉得青春就是这样，后劲很大。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><div class="avatar">新</div><span class="nickname">新剧观察员</span><span class="comment-date">10月28日</span></div>
+          <p class="comment-text">IU和朴宝剑新剧预告出了，韩剧在线预定12月爆款，这组合太强了。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><div class="avatar">黑</div><span class="nickname">黑暗荣耀粉</span><span class="comment-date">10月27日</span></div>
+          <p class="comment-text">宋慧乔演技大突破，韩剧在线复仇剧还得看《黑暗荣耀》，细节多到可怕。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><div class="avatar">随</div><span class="nickname">随便看看</span><span class="comment-date">10月26日</span></div>
+          <p class="comment-text">韩剧在线选择太多了，有时候反而不知道看什么，这个榜单挺实用。</p>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><div class="avatar">古</div><span class="nickname">古装爱好者</span><span class="comment-date">10月25日</span></div>
+          <p class="comment-text">《王国》之后好久没看到好的古装韩剧在线了，有没有类似推荐？</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相关资讯 -->
+  <section class="section" id="news">
+    <div class="wrap">
+      <div class="section-header">
+        <h2 class="section-title">韩剧在线相关资讯</h2>
+        <a href="/#news" class="section-more">更多资讯 →</a>
+      </div>
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="news-date">2026年11月7日</div>
+          <h3>《泪之女王》特别篇上线，韩剧在线热度再攀升</h3>
+          <p>特别篇收录幕后花絮与未公开片段，金秀贤金智媛互动引发粉丝热议，相关话题登上热搜。</p>
+        </article>
+        <article class="news-card">
+          <div class="news-date">2026年11月6日</div>
+          <h3>《信号》第二季确认制作，原班人马回归</h3>
+          <p>tvN正式宣布续订，编剧金银姬继续执笔，韩剧在线悬疑剧迷期待值创近年新高。</p>
+        </article>
+        <article class="news-card">
+          <div class="news-date">2026年11月5日</div>
+          <h3>IU朴宝剑新剧《您辛苦了》首发预告</h3>
+          <p>济州岛四季叙事，治愈系画风，预计12月韩剧在线平台首播，中字预告已释出。</p>
+        </article>
+        <article class="news-card">
+          <div class="news-date">2026年11月4日</div>
+          <h3>《请回答1988》十周年特辑上线</h3>
+          <p>双门洞家族重聚，导演申源浩与演员回顾拍摄幕后，韩剧在线可观看完整版。</p>
+        </article>
+        <article class="news-card">
+          <div class="news-date">2026年11月3日</div>
+          <h3>《模范出租车3》首发剧照，李帝勋回归</h3>
+          <p>彩虹运输新任务曝光，预计2027年播出，韩剧在线犯罪题材持续发力。</p>
+        </article>
+        <article class="news-card">
+          <div class="news-date">2026年11月1日</div>
+          <h3>韩剧在线观看趋势：治愈系与复仇剧双线增长</h3>
+          <p>根据搜索数据，2026年韩剧在线用户对治愈系和复仇爽剧需求同步上升，类型分化明显。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 页脚 -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark">한</span>
+          <span>韩剧在线</span>
+        </div>
+        <p>韩剧在线内容推荐与追剧指南，聚合热播韩剧、新剧动态、用户讨论与深度解析，帮助韩剧迷发现值得看的好剧。</p>
+      </div>
+      <div class="footer-col">
+        <h4>快速导航</h4>
+        <a href="/#rank-hot">热播榜</a>
+        <a href="/#rank-new">新剧榜</a>
+        <a href="/#category">分类索引</a>
+        <a href="/#update">更新动态</a>
+      </div>
+      <div class="footer-col">
+        <h4>内容板块</h4>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">浏览指南</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comment">用户评论</a>
+      </div>
+      <div class="footer-col">
+        <h4>友情链接</h4>
+        <a href="#">韩剧TV</a>
+        <a href="#">Netflix韩剧</a>
+        <a href="#">豆瓣韩剧</a>
+        <a href="#">韩剧收视率</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 韩剧在线 · 内容推荐专题站</span>
+      <span>本站内容仅作信息参考与讨论，不提供在线播放资源。</span>
+    </div>
+    <p class="disclaimer">免责声明：本页面所涉及剧集信息、排名、评论均为模拟内容，旨在展示页面结构。实际观看请选择正版授权平台。友情链接为占位示意，与本站无直接关联。</p>
+  </div>
+</footer>
+
+</body>
+            </html>
