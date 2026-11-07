@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>91次元动漫官网-在线追番_新番推荐_动漫资源导航</title>
+  <meta name="description" content="91次元动漫官网是一个专注动漫内容发现与追番的专题站，提供新番推荐、经典番剧解析、声优与制作公司资料、用户评论和资讯动态，帮助动漫爱好者快速找到想看的作品与讨论入口。">
+  <meta name="keywords" content="91次元动漫官网,在线追番,新番推荐,动漫资源导航,动漫专题">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #f7f9fc;
+      --surface: #ffffff;
+      --text-primary: #1a1f2b;
+      --text-secondary: #4e5969;
+      --text-tertiary: #7c8797;
+      --accent: #6c5ce7;
+      --accent-soft: #ede9fe;
+      --accent-dark: #4a3fbf;
+      --border: #e9ecf2;
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+      --radius-md: 16px;
+      --radius-sm: 10px;
+      --radius-lg: 24px;
+      --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 导航 */
+    .nav-bar {
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent), #a29bfe);
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-outline {
+      padding: 8px 18px;
+      border-radius: 40px;
+      border: 1px solid var(--border);
+      background: transparent;
+      font-weight: 500;
+      color: var(--text-secondary);
+      cursor: default;
+    }
+
+    .btn-primary {
+      padding: 8px 20px;
+      border-radius: 40px;
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-weight: 600;
+      cursor: default;
+    }
+
+    /* 卡片通用 */
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Banner */
+    .hero-section {
+      padding: 32px 0 24px;
+    }
+
+    .hero-card {
+      background: linear-gradient(145deg, #f0edff 0%, #ffffff 100%);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      border: 1px solid var(--border);
+    }
+
+    .hero-title {
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 720px;
+      margin-bottom: 24px;
+    }
+
+    .search-box {
+      display: flex;
+      max-width: 540px;
+      background: white;
+      border-radius: 60px;
+      border: 1px solid var(--border);
+      padding: 6px 6px 6px 20px;
+      align-items: center;
+      gap: 12px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 28px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      flex: 1;
+      font-size: 0.95rem;
+      background: transparent;
+      color: var(--text-primary);
+    }
+
+    .search-box input::placeholder {
+      color: var(--text-tertiary);
+    }
+
+    .search-box .search-btn {
+      background: var(--accent);
+      border: none;
+      border-radius: 40px;
+      padding: 10px 24px;
+      color: white;
+      font-weight: 600;
+      cursor: default;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-tag {
+      background: rgba(108, 92, 231, 0.1);
+      color: var(--accent-dark);
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+    }
+
+    /* 通用章节 */
+    .section {
+      padding: 44px 0 16px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .section-more {
+      color: var(--accent);
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+
+    /* 网格系统 */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    /* 内容卡片 */
+    .anime-card {
+      padding: 20px;
+    }
+
+    .anime-cover {
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+      border-radius: var(--radius-sm);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4a3fbf;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+    }
+
+    .anime-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    .anime-meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 0.72rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    .anime-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .anime-stats {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-tertiary);
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+    }
+
+    /* 最新更新列表 */
+    .update-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .update-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+      padding: 14px 20px;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+
+    .update-item:hover {
+      background: #fafaff;
+    }
+
+    .update-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .update-badge {
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 0.72rem;
+      padding: 2px 12px;
+      border-radius: 30px;
+      margin-left: 12px;
+    }
+
+    .update-time {
+      font-size: 0.8rem;
+      color: var(--text-tertiary);
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .category-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      font-weight: 600;
+      color: var(--text-primary);
+      transition: all 0.2s;
+    }
+
+    .category-item:hover {
+      border-color: var(--accent);
+      background: #fafaff;
+    }
+
+    .category-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--accent-soft);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    /* 深度解析 */
+    .analysis-box {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      border: 1px solid var(--border);
+      line-height: 1.8;
+    }
+
+    .analysis-box h3 {
+      font-size: 1.3rem;
+      margin: 24px 0 12px;
+    }
+
+    .analysis-box p {
+      margin-bottom: 16px;
+      color: var(--text-secondary);
+      font-size: 0.98rem;
+    }
+
+    /* FAQ 手风琴 */
+    .faq-item {
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 18px 24px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: default;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+    }
+
+    .faq-answer {
+      padding: 0 24px 20px;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      margin-top: 0;
+    }
+
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .comment-card {
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+    }
+
+    .comment-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #a29bfe, #6c5ce7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+
+    .comment-nick {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .comment-date {
+      font-size: 0.7rem;
+      color: var(--text-tertiary);
+      margin-left: auto;
+    }
+
+    .comment-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* 资讯卡片 */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .news-card {
+      padding: 22px;
+    }
+
+    .news-date {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .news-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .news-summary {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* 页脚 */
+    .footer {
+      margin-top: 60px;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 40px 0 24px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer-brand {
+      max-width: 280px;
+    }
+
+    .footer-brand .logo {
+      margin-bottom: 12px;
+    }
+
+    .footer-desc {
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .footer-col h4 {
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 8px;
+    }
+
+    .footer-col a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    .footer-bottom {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--text-tertiary);
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .grid-3, .grid-4, .category-grid, .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .comment-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 1.9rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .grid-3, .grid-4, .category-grid, .news-grid {
+        grid-template-columns: 1fr;
+      }
+      .section-title {
+        font-size: 1.4rem;
+      }
+      .analysis-box {
+        padding: 24px;
+      }
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎌</text></svg>">
+</head>
+<body>
+  <!-- 导航 -->
+  <nav class="nav-bar">
+    <div class="wrapper nav-inner">
+      <div class="logo">
+        <span class="logo-icon">91</span>
+        91次元动漫官网
+      </div>
+      <ul class="nav-links">
+        <li><a href="/#anime-hot">热门推荐</a></li>
+        <li><a href="/#anime-latest">最新更新</a></li>
+        <li><a href="/#anime-category">分类索引</a></li>
+        <li><a href="/#anime-deep">深度解析</a></li>
+        <li><a href="/#anime-faq">常见问题</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn-outline">收藏本站</button>
+        <button class="btn-primary">开始追番</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Banner -->
+  <section class="hero-section">
+    <div class="wrapper">
+      <div class="hero-card">
+        <h1 class="hero-title">91次元动漫官网 · 在线追番与动漫资源导航</h1>
+        <p class="hero-subtitle">
+          聚合新番动态、经典番剧解析与声优制作资讯，为动漫爱好者提供清晰的追番路径和内容推荐。
+          无论你是季度追番党还是补番收藏家，都能在这里找到想看的内容与讨论入口。
+        </p>
+        <div class="search-box">
+          <input type="text" placeholder="搜索动漫名称、声优或制作公司..." value="91次元动漫官网">
+          <button class="search-btn">搜索</button>
+        </div>
+        <div class="hero-tags">
+          <span class="hero-tag">新番速递</span>
+          <span class="hero-tag">经典补番</span>
+          <span class="hero-tag">声优阵容</span>
+          <span class="hero-tag">制作公司</span>
+          <span class="hero-tag">追番日历</span>
+          <span class="hero-tag">动漫评论</span>
+          <span class="hero-tag">资源导航</span>
+          <span class="hero-tag">专题合集</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 内容简介 -->
+  <section class="section" id="anime-intro">
+    <div class="wrapper">
+      <div class="section-header">
+        <h2 class="section-title">关于91次元动漫官网</h2>
+      </div>
+      <div class="analysis-box" style="padding: 28px 32px;">
+        <p>
+          <strong>91次元动漫官网</strong>是一个面向动漫爱好者的内容发现与导航专题站。我们围绕“追番”这一核心场景，整理每季度新番的播出信息、制作阵容、剧情简介和观众口碑，同时收录经典作品的深度解析与背景资料。页面内容覆盖TV动画、剧场版、OVA以及部分短篇动画，帮助用户快速判断哪些作品值得投入时间。
+        </p>
+        <p>
+          对于刚接触动漫的用户，这里提供类型分类和入门推荐，降低选择门槛；对于资深观众，页面中的声优访谈摘要、制作公司风格分析以及同类作品对比，能提供更细颗粒度的参考。我们不会直接提供视频播放源，而是通过结构化信息、标签体系和社区讨论入口，让你在“看什么、为什么看、和谁讨论”三个环节都有据可依。
+        </p>
+        <p>
+          本页内容会随季度新番和热门话题持续更新，所有推荐卡片均标注类型、看点与模拟热度，方便你收藏或对比。91次元动漫官网的目标不是做最大的资源站，而是做对追番决策最有帮助的内容枢纽。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门推荐 -->
+  <section class="section" id="anime-hot">
+    <div class="wrapper">
+      <div class="section-header">
+        <h2 class="section-title">热门动漫推荐</h2>
+        <a href="/#anime-hot" class="section-more">查看更多 →</a>
+      </div>
+      <div class="grid-3">
+        <div class="card anime-card">
+          <div class="anime-cover">🎬 星轨回响</div>
+          <h3 class="anime-title">星轨回响</h3>
+          <div class="anime-meta"><span class="tag">科幻</span><span class="tag">群像</span><span class="tag">2026新番</span></div>
+          <p class="anime-desc">星际航行与记忆回溯交织，多线叙事在第八集迎来关键转折，作画稳定，音乐表现突出。</p>
+          <div class="anime-stats"><span>热度 9821</span><span>更新至第8话</span></div>
+        </div>
+        <div class="card anime-card">
+          <div class="anime-cover">🌸 花间一壶酒</div>
+          <h3 class="anime-title">花间一壶酒</h3>
+          <div class="anime-meta"><span class="tag">古风</span><span class="tag">治愈</span><span class="tag">美食</span></div>
+          <p class="anime-desc">以酒馆为舞台的单元剧，每集一道料理一段故事，节奏舒缓，适合睡前观看。</p>
+          <div class="anime-stats"><span>热度 8742</span><span>更新至第6话</span></div>
+        </div>
+        <div class="card anime-card">
+          <div class="anime-cover">⚔️ 暗刃行者</div>
+          <h3 class="anime-title">暗刃行者</h3>
+          <div class="anime-meta"><span class="tag">战斗</span><span class="tag">奇幻</span><span class="tag">漫改</span></div>
+          <p class="anime-desc">原作高人气篇章动画化，动作分镜流畅，主角成长线清晰，适合热血番爱好者。</p>
+          <div class="anime-stats"><span>热度 11230</span><span>更新至第10话</span></div>
+        </div>
+        <div class="card anime-card">
+          <div class="anime-cover">🎧 声之形剧场版</div>
+          <h3 class="anime-title">声之形（剧场版）</h3>
+          <div class="anime-meta"><span class="tag">剧场版</span><span class="tag">校园</span><span class="tag">情感</span></div>
+          <p class="anime-desc">经典剧场版重映，细腻描绘听觉障碍少女与周围人的关系，配乐与分镜值得反复品味。</p>
+          <div class="anime-stats"><span>热度 7940</span><span>已完结</span></div>
+        </div>
+        <div class="card anime-card">
+          <div class="anime-cover">🧪 异世界药局</div>
+          <h3 class="anime-title">异世界药局</h3>
+          <div class="anime-meta"><span class="tag">异世界</span><span class="tag">经营</span><span class="tag">轻改</span></div>
+          <p class="anime-desc">药学知识结合异世界设定，节奏轻快，科普与爽点平衡得不错，适合轻松观看。</p>
+          <div class="anime-stats"><span>热度 6530</span><span>更新至第12话</span></div>
+        </div>
+        <div class="card anime-card">
+          <div class="anime-cover">🏀 篮板之下</div>
+          <h3 class="anime-title">篮板之下</h3>
+          <div class="anime-meta"><span class="tag">运动</span><span class="tag">热血</span><span class="tag">原创</span></div>
+          <p class="anime-desc">原创篮球动画，侧重团队配合与心理描写，比赛节奏紧凑，适合运动番受众。</p>
+          <div class="anime-stats"><span>热度 5680</span><span>更新至第5话</span></div>
+        </div>
+        <div class="card anime-card">
+          <div class="anime-cover">🌙 月影异闻录</div>
+          <h3 class="anime-title">月影异闻录</h3>
+          <div class="anime-meta"><span class="tag">悬疑</span><span class="tag">妖怪</span><span class="tag">小说改</span></div>
+          <p class="anime-desc">昭和风妖怪奇谭，单元剧形式，氛围营造到位，适合喜欢怪谈题材的观众。</p>
+          <div class="anime-stats"><span>热度 7200</span><span>更新至第7话</span></div>
+        </div>
+        <div class="card anime-card">
+          <div class="anime-cover">🍰 甜点部日常</div>
+          <h3 class="anime-title">甜点部日常</h3>
+          <div class="anime-meta"><span class="tag">日常</span><span class="tag">萌系</span><span class="tag">四格改</span></div>
+          <p class="anime-desc">四格漫画改编，制作甜点的小故事，轻松无压力，适合碎片时间观看。</p>
+          <div class="anime-stats"><span>热度 4890</span><span>更新至第9话</span></div>
+        </div>
+        <div class="card anime-card">
+          <div class="anime-cover">🚀 星海遗孤</div>
+          <h3 class="anime-title">星海遗孤</h3>
+          <div class="anime-meta"><span class="tag">太空</span><span class="tag">冒险</span><span class="tag">原创</span></div>
+          <p class="anime-desc">太空生存题材，主角在废弃空间站独自求生，悬念设置密集，适合一口气补完。</p>
+          <div class="anime-stats"><span>热度 8300</span><span>更新至第4话</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最新更新 -->
+  <section class="section" id="anime-latest">
+    <div class="wrapper">
+      <div class="section-header">
+        <h2 class="section-title">最新更新与热播动态</h2>
+        <a href="/#anime-latest" class="section-more">完整列表 →</a>
+      </div>
+      <div class="update-list">
+        <div class="update-item"><span><span class="update-name">星轨回响</span><span class="update-badge">第8话</span></span><span class="update-time">今天 20:00</span></div>
+        <div class="update-item"><span><span class="update-name">暗刃行者</span><span class="update-badge">第10话</span></span><span class="update-time">今天 22:30</span></div>
+        <div class="update-item"><span><span class="update-name">花间一壶酒</span><span class="update-badge">第6话</span></span><span class="update-time">昨天 19:00</span></div>
+        <div class="update-item"><span><span class="update-name">月影异闻录</span><span class="update-badge">第7话</span></span><span class="update-time">昨天 21:00</span></div>
+        <div class="update-item"><span><span class="update-name">星海遗孤</span><span class="update-badge">第4话</span></span><span class="update-time">11月5日</span></div>
+        <div class="update-item"><span><span class="update-name">篮板之下</span><span class="update-badge">第5话</span></span><span class="update-time">11月5日</span></div>
+        <div class="update-item"><span><span class="update-name">甜点部日常</span><span class="update-badge">第9话</span></span><span class="update-time">11月4日</span></div>
+        <div class="update-item"><span><span class="update-name">异世界药局</span><span class="update-badge">第12话</span></span><span class="update-time">11月3日</span></div>
+        <div class="update-item"><span><span class="update-name">声之形（剧场版）</span><span class="update-badge">重映</span></span><span class="update-time">11月2日</span></div>
+        <div class="update-item"><span><span class="update-name">暗刃行者 特别篇</span><span class="update-badge">预告</span></span><span class="update-time">11月1日</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分类入口 -->
+  <section class="section" id="anime-category">
+    <div class="wrapper">
+      <div class="section-header">
+        <h2 class="section-title">按类型浏览动漫</h2>
+      </div>
+      <div class="category-grid">
+        <div class="category-item"><span class="category-icon">🔥</span>热血战斗</div>
+        <div class="category-item"><span class="category-icon">🌸</span>治愈日常</div>
+        <div class="category-item"><span class="category-icon">🧠</span>悬疑推理</div>
+        <div class="category-item"><span class="category-icon">💕</span>恋爱校园</div>
+        <div class="category-item"><span class="category-icon">⚙️</span>科幻机甲</div>
+        <div class="category-item"><span class="category-icon">🏯</span>古风奇幻</div>
+        <div class="category-item"><span class="category-icon">🏀</span>运动竞技</div>
+        <div class="category-item"><span class="category-icon">🎭</span>剧场版/OVA</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 深度解析正文 -->
+  <section class="section" id="anime-deep">
+    <div class="wrapper">
+      <div class="section-header">
+        <h2 class="section-title">深度解析：如何用好91次元动漫官网</h2>
+      </div>
+      <div class="analysis-box">
+        <h3>从“想看”到“在看”的决策路径</h3>
+        <p>
+          很多人打开动漫网站时并没有明确目标，只是“想找一部看看”。91次元动漫官网的设计逻辑正是围绕这种模糊需求展开：首页的热门推荐卡片用类型标签和短评降低认知负担，最新更新列表则帮助追番党快速确认今天有哪些内容可看。当你对某部作品产生兴趣，点击标题或封面进入的专题页会提供更完整的制作信息、声优列表和同类对比，让你在决定投入时间前有足够判断依据。
+        </p>
+        <h3>类型标签与长尾需求的匹配</h3>
+        <p>
+          不同类型观众的搜索意图差异很大。搜索“治愈系动漫推荐”的用户往往想要节奏舒缓、情感细腻的作品，而搜索“热血战斗番”的用户更关注作画质量和剧情推进。91次元动漫官网的分类入口和标签体系正是为了承接这些长尾需求。页面上每个推荐卡片都标注了3个以内的核心标签，避免过度分类带来的选择困难。同时，深度解析板块会定期围绕一个类型或主题展开，比如“异世界题材的演变”“运动番的叙事套路”，为有进一步了解意愿的用户提供延伸阅读。
+        </p>
+        <h3>声优与制作公司：进阶观众的关注点</h3>
+        <p>
+          当观众从“看剧情”进阶到“看制作”，声优阵容和制作公司就成为重要的决策因素。91次元动漫官网在推荐卡片中会标注制作公司风格（如“骨头社动作作画”“京都动画细腻演出”），并在深度解析中讨论声优表现对角色塑造的影响。这些信息不直接提供观看渠道，但能帮助用户建立对作品质量的预期，减少“点开一集发现不合口味”的时间浪费。
+        </p>
+        <h3>节奏与消费体验</h3>
+        <p>
+          页面信息密度经过刻意控制：首屏只保留核心搜索框和8个快捷标签，避免一上来就堆满卡片。主要内容区域按“热门推荐→最新更新→分类索引→深度解析”的顺序展开，符合从发现到深入了解的阅读节奏。移动端去掉了复杂装饰和部分侧边信息，保证单手操作时的可读性。所有卡片均可直接点击标题进入对应内容区域，内链结构清晰，方便搜索引擎抓取页面层级。
+        </p>
+        <h3>同类内容比较与选择建议</h3>
+        <p>
+          以本季新番为例，如果你喜欢《星轨回响》的多线叙事，可以关注同属科幻群像的《星海遗孤》，但后者更侧重生存悬念而非人物关系；如果你偏好《花间一壶酒》的单元剧治愈感，那么《甜点部日常》同样适合碎片时间观看，只是萌系风格更浓。91次元动漫官网在推荐卡片中会尽量用一句话点出差异点，帮助用户根据自己的偏好做选择。这种比较视角也贯穿在用户评论和FAQ中，形成多角度的内容参考。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="anime-faq">
+    <div class="wrapper">
+      <div class="section-header">
+        <h2 class="section-title">常见问题</h2>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">91次元动漫官网提供在线观看吗？</div>
+        <div class="faq-answer">91次元动漫官网不直接提供视频播放源，而是一个动漫内容发现与导航平台。我们整理每季度新番的播出时间、制作阵容、剧情简介和观众评价，帮助你快速判断哪些作品值得追。观看渠道请通过正规授权平台获取。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">页面上的推荐卡片是按什么标准排序的？</div>
+        <div class="faq-answer">推荐卡片综合考虑了近期热度、更新进度和编辑评估。热度数据为模拟指标，用于反映讨论活跃度；编辑评估则侧重制作质量、叙事完整度和类型代表性。我们不会单纯按热度排序，以免小众优质作品被埋没。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">如何快速找到适合自己口味的动漫？</div>
+        <div class="faq-answer">建议先从分类入口选择你感兴趣的类型标签，比如“治愈日常”或“悬疑推理”，然后在对应推荐列表中浏览卡片上的短评和标签。如果看到感兴趣的作品，可以进一步阅读深度解析板块中关于该类型或该作品的讨论，了解它在同类作品中的位置。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">新番更新信息多久同步一次？</div>
+        <div class="faq-answer">页面中的最新更新列表按天更新，主要依据日本播出进度和官方公告。遇到停更或特别篇调整时，我们会在更新条目中标注“特别篇”“预告”等状态。由于是静态内容站，具体时间以官方发布为准，页面仅供参考。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">可以在页面上发表对动漫的评论吗？</div>
+        <div class="faq-answer">当前页面展示的是社区短评摘要，用于呈现观众的不同观点。如果你希望参与更深入的讨论，可以关注页面中“社区讨论”相关板块的引导。我们鼓励理性、有信息量的评论，避免纯情绪化表达。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">91次元动漫官网适合什么样的用户？</div>
+        <div class="faq-answer">适合希望高效筛选动漫作品、了解制作背景和观众口碑的用户。无论是每季度追多部新番的资深观众，还是偶尔想找一部轻松作品的新手，都可以通过分类导航、深度解析和FAQ快速获取决策信息。页面不设观看门槛，但需要你有一定的自主选择意愿。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户评论 -->
+  <section class="section" id="anime-comments">
+    <div class="wrapper">
+      <div class="section-header">
+        <h2 class="section-title">用户评论</h2>
+      </div>
+      <div class="comment-grid">
+        <div class="comment-card"><div class="comment-header"><div class="avatar">星</div><span class="comment-nick">星野拾光</span><span class="comment-date">11月6日</span></div><p class="comment-text">星轨回响第八集的分镜真的可以，多线收束得很自然，希望后面别崩。</p></div>
+        <div class="comment-card"><div class="comment-header"><div class="avatar">番</div><span class="comment-nick">番剧收藏家</span><span class="comment-date">11月5日</span></div><p class="comment-text">暗刃行者打斗确实流畅，但原作党表示删了一些细节，节奏稍微赶了点。</p></div>
+        <div class="comment-card"><div class="comment-header"><div class="avatar">酒</div><span class="comment-nick">酒酿团子</span><span class="comment-date">11月5日</span></div><p class="comment-text">花间一壶酒太适合下班后看了，每集一道菜一个故事，治愈力拉满。</p></div>
+        <div class="comment-card"><div class="comment-header"><div class="avatar">月</div><span class="comment-nick">月下独酌</span><span class="comment-date">11月4日</span></div><p class="comment-text">月影异闻录的昭和感做得很足，就是有些单元剧质量参差，希望后面主线能撑起来。</p></div>
+        <div class="comment-card"><div class="comment-header"><div class="avatar">板</div><span class="comment-nick">篮板少年</span><span class="comment-date">11月4日</span></div><p class="comment-text">篮板之下原创剧情比想象中扎实，团队配合的细节有认真做，不是超能力篮球。</p></div>
+        <div class="comment-card"><div class="comment-header"><div class="avatar">甜</div><span class="comment-nick">甜点部常客</span><span class="comment-date">11月3日</span></div><p class="comment-text">甜点部日常就是那种不用带脑子看的番，四格改的节奏刚刚好，下饭用。</p></div>
+        <div class="comment-card"><div class="comment-header"><div class="avatar">星</div><span class="comment-nick">星海迷航</span><span class="comment-date">11月3日</span></div><p class="comment-text">星海遗孤悬念铺得不错，但第四集有点拖，希望别烂尾。</p></div>
+        <div class="comment-card"><div class="comment-header"><div class="avatar">药</div><span class="comment-nick">药学转生</span><span class="comment-date">11月2日</span></div><p class="comment-text">异世界药局科普部分比预想中多，喜欢这种带点知识点的爽番。</p></div>
+        <div class="comment-card"><div class="comment-header"><div class="avatar">声</div><span class="comment-nick">声之形重温</span><span class="comment-date">11月2日</span></div><p class="comment-text">声之形重映又去看了，配乐一响还是绷不住，京都动画的分镜太细了。</p></div>
+        <div class="comment-card"><div class="comment-header"><div class="avatar">排</div><span class="comment-nick">排雷选手</span><span class="comment-date">11月1日</span></div><p class="comment-text">暗刃特别篇预告看起来是总集篇，有点失望，希望正片快点回来。</p></div>
+        <div class="comment-card"><div class="comment-header"><div class="avatar">追</div><span class="comment-nick">追番日历</span><span class="comment-date">10月31日</span></div><p class="comment-text">这个页面整理更新列表挺方便的，直接看今天有什么更新就行。</p></div>
+        <div class="comment-card"><div class="comment-header"><div class="avatar">萌</div><span class="comment-nick">萌系观察员</span><span class="comment-date">10月30日</span></div><p class="comment-text">甜点部日常的作画稳定得不像四格改，希望保持到完结。</p></div>
+        <div class="comment-card"><div class="comment-header"><div class="avatar">科</div><span class="comment-nick">科幻老饕</span><span class="comment-date">10月29日</span></div><p class="comment-text">星轨回响的设定有点像几部经典作品缝合，但演出确实好，暂时观望。</p></div>
+        <div class="comment-card"><div class="comment-header"><div class="avatar">声</div><span class="comment-nick">声优情报站</span><span class="comment-date">10月28日</span></div><p class="comment-text">暗刃行者的主角声优这次表现不错，情绪爆发戏撑住了。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 相关资讯 -->
+  <section class="section" id="anime-news">
+    <div class="wrapper">
+      <div class="section-header">
+        <h2 class="section-title">动漫资讯速递</h2>
+      </div>
+      <div class="news-grid">
+        <div class="card news-card"><div class="news-date">2026年11月6日</div><h3 class="news-title">《星轨回响》第八话播出，多线叙事进入高潮</h3><p class="news-summary">本集回收了前七集的多处伏笔，观众讨论热度明显上升，制作组确认后续会有特别篇。</p></div>
+        <div class="card news-card"><div class="news-date">2026年11月5日</div><h3 class="news-title">暗刃行者第九话收视率创本季新高</h3><p class="news-summary">动作场面和剧情转折带动收视，原作漫画同步开启新篇章，动画进度引发讨论。</p></div>
+        <div class="card news-card"><div class="news-date">2026年11月4日</div><h3 class="news-title">花间一壶酒公布追加声优阵容</h3><p class="news-summary">第六话登场的客串角色由知名声优出演，官方同时释出了新料理设定图。</p></div>
+        <div class="card news-card"><div class="news-date">2026年11月3日</div><h3 class="news-title">《声之形》重映票房突破预期，京都动画发布感谢绘</h3><p class="news-summary">重映版本增加了部分场景描写，官方在社交平台发布主演声优留言。</p></div>
+        <div class="card news-card"><div class="news-date">2026年11月2日</div><h3 class="news-title">星海遗孤第四话后进入新章节，主角将面对外部威胁</h3><p class="news-summary">制作组在访谈中透露后续会引入新的幸存者，空间站内外的悬念将逐步展开。</p></div>
+        <div class="card news-card"><div class="news-date">2026年11月1日</div><h3 class="news-title">月影异闻录原作小说销量因动画效应上涨</h3><p class="news-summary">动画播出后原作文库本连续三周进入销量榜，出版社宣布加印。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="wrapper">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo"><span class="logo-icon">91</span>91次元动漫官网</div>
+          <p class="footer-desc">专注动漫内容发现与追番决策的导航专题站。提供新番推荐、类型解析、声优与制作资讯，帮助爱好者高效找到想看的作品。</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col"><h4>导航</h4><ul><li><a href="/#anime-hot">热门推荐</a></li><li><a href="/#anime-latest">最新更新</a></li><li><a href="/#anime-category">分类索引</a></li><li><a href="/#anime-deep">深度解析</a></li></ul></div>
+          <div class="footer-col"><h4>帮助</h4><ul><li><a href="/#anime-faq">常见问题</a></li><li><a href="/#anime-comments">用户评论</a></li><li><a href="/#anime-news">资讯速递</a></li></ul></div>
+          <div class="footer-col"><h4>友情链接</h4><ul><li><a href="#">动漫资源导航</a></li><li><a href="#">声优资料库</a></li><li><a href="#">制作公司档案</a></li><li><a href="#">追番日历工具</a></li></ul></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 91次元动漫官网 · 内容仅供参考与交流</span>
+        <span>免责声明：本站不提供在线播放，所有信息来自公开渠道整理，请支持正版。</span>
+      </div>
+    </div>
+  </footer>
+</body>
+  </html>
